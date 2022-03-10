@@ -24,12 +24,6 @@
   place-content: center;
 }
 
-.warn {
-  font-family: var(--fml-font);
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.4);
-}
-
 .msg-error {
   padding: 10px;
   font-family: var(--fml-font);

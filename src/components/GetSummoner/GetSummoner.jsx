@@ -6,7 +6,7 @@ import ApiContext from '../../context/ApiContext'
 
 import './style.css'
 
-const ContentApi = ({ summoner }) => {
+const GetSummoner = ({ summoner }) => {
   const { data, apiResults, loader, setLoader } = useContext(ApiContext)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const ContentApi = ({ summoner }) => {
   }, [summoner])
 
   if (loader) return <div className='grid-center'><Grid height="50" width="50" color='white' ariaLabel='loading' /></div>
-  if (data === undefined) return <h1 className='container-box warn'>We have a problem! Maybe the summoner name is invalid!</h1>
+  if (data === undefined) return <h1 className='container-box msg-error'>Summoner Name Doesn&apos;t exists!</h1>
   if (data.summoner === undefined) return ''
 
   return (
@@ -46,4 +46,4 @@ const ContentApi = ({ summoner }) => {
   )
 }
 
-export default ContentApi
+export default GetSummoner
