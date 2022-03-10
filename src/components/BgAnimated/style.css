@@ -1,0 +1,54 @@
+.banner1 {
+  position: absolute;
+  background: url(https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position-y: 0;
+  animation: topdown1 10s linear infinite;
+}
+
+.banner2 {
+  position: absolute;
+  background: url(https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position-y: 100%;
+  animation: topdown2 20s linear infinite;
+}
+
+.banner1, .banner2 {
+  width: 100%;
+  height: 50%;
+
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0,0,0, 0.2), -10px -10px 10px rgba(0,0,0, 0.2);
+  transform: skewY(-5deg);
+  z-index: -200;
+}
+
+@keyframes topdown1 {
+  0% {
+		top: 0px;
+	}
+
+	50% {
+		top: 250px;
+	}
+
+  100% {
+		top: 0px;
+  }
+}
+@keyframes topdown2 {
+  0% {
+		top: 20px;
+	}
+
+	50% {
+		top: 300px;
+	}
+
+  100% {
+		top: 20px;
+  }
+}

@@ -1,0 +1,39 @@
+:root {
+  /* Backgrounds */
+  --bg-color: #151515;
+  /* Colors */
+  --gradient-or: linear-gradient(#e91e63, #ffc107);
+  --gradient-or: linear-gradient(#293799, #224099);
+  /* Fonts*/
+  --fml-font: 'Source Sans Pro', sans-serif;
+}
+
+.container-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  padding: 15px;
+}
+
+.grid-center {
+  display: grid;
+  place-content: center;
+}
+
+.warn {
+  font-family: var(--fml-font);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.msg-error {
+  padding: 10px;
+  font-family: var(--fml-font);
+  color: #e91e63;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}

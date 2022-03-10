@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+// Contexts
+import { ApiLolContextProvider } from './context/ApiContext'
+
+// Components
+import { Navbar, BgAnimated, HandleRoutes } from './components'
+
+const App = () => {
+  const [summoner, setSummoner] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <BgAnimated />
+      <header>
+        <Navbar />
       </header>
-    </div>
-  );
+      <ApiLolContextProvider>
+        <HandleRoutes summoner={summoner} setSummoner={setSummoner} />
+      </ApiLolContextProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
