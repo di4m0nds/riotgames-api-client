@@ -1,21 +1,25 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { Search, GetSummoner } from '../'
+import { GetSummoner, GetFreeRotation, SummonerContent } from '../'
 
-const HandleRoutes = ({ summoner, setSummoner }) => {
-  const summonerLocation = location.pathname.split('/')[1]
+const HandleRoutes = ({ summoner }) => {
+  const summonerLocation = location.pathname.split('/')
 
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={
           <>
-            <Search setSummoner={setSummoner} />
             <GetSummoner summoner={summoner} />
+            <GetFreeRotation summoner={summoner} />
           </>
         } />
-        <Route exact path={`/${summonerLocation}`} element={<></>} />
+        <Route exact path={`/${summonerLocation[1]}/summoner/${summonerLocation[3]}`}
+          element={
+            <SummonerContent summonerRegion={summonerLocation[1]} summonerName={summonerLocation[3]} />
+          }
+        />
       </Routes>
     </Router>
   )

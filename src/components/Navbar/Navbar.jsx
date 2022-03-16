@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className='app-nav'>
       <div className='app-nav_logo'>
-        LoLMatches
+        <a href='/'>LoLMatches</a>
       </div>
     </nav>
   )

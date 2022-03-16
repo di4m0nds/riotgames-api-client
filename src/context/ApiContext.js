@@ -5,21 +5,30 @@ const Context = React.createContext({})
 const baseUrl = 'http://localhost:6969/'
 
 export function ApiLolContextProvider ({ children }) {
-  const [data, setData] = useState({})
   const [loader, setLoader] = useState(false)
 
-  const apiResults = async (extUrl) => {
-    const result = await axios.get(`${baseUrl}${extUrl}`)
+  const [summonerData, setSummonerData] = useState({})
+  const [freeChampsRotation, setFreeChampsRotation] = useState({})
+  const [matchesData, setMatchesData] = useState([])
+
+  const apiGetSummoner = async (extUrl) => {
+    let result = {}
+    result = await axios.get(`${baseUrl}summoner/${extUrl}`)
+      .then(response => response)
+      .catch(e => {
+        setLoader(false)
+        setSummonerData(undefined)
+      })
 
     if (result?.data?.puuid === undefined) {
       setLoader(false)
-      setData(undefined)
+      setSummonerData(undefined)
       return
     }
 
     const response = await axios.get(`${baseUrl}summoner/icon/${result?.data?.profileIconId}`)
 
-    setData({
+    setSummonerData({
       summonerPuuid: result?.data?.puuid,
       summoner: result?.data?.name,
       summonerLevel: result?.data?.summonerLevel,
@@ -29,8 +38,48 @@ export function ApiLolContextProvider ({ children }) {
     setLoader(false)
   }
 
+  const apiGetMatches = async (extUrl) => {
+    await axios.get(`${baseUrl}matches/${extUrl}`)
+      .then(res => {
+        setMatchesData(res.data)
+        setLoader(false)
+      })
+      .catch(err => console.error(err))
+  }
+
+  const apiGetChamps = async () => {
+    const result = await axios.get('http://localhost:6969/champions/all')
+    return result.data.data
+  }
+
+  const apiGetFreeRotation = async (region) => {
+    const response = await axios.get(`http://localhost:6969/champions/free/${region}`)
+    const results = response.data?.freeChampionIdsForNewPlayers
+    const allFreeChamps = {}
+
+    Object.values(await apiGetChamps()).forEach(el => {
+      if (results[el.key] !== undefined) {
+        allFreeChamps[el.name] = el
+      }
+    })
+
+    setFreeChampsRotation(allFreeChamps)
+  }
+
   return (
-   <Context.Provider value={{ data, setData, apiResults, loader, setLoader }}>
+   <Context.Provider
+    value={{
+      summonerData,
+      apiGetSummoner,
+      loader,
+      setLoader,
+      apiGetMatches,
+      matchesData,
+      apiGetChamps,
+      apiGetFreeRotation,
+      freeChampsRotation
+    }}
+   >
       {children}
     </Context.Provider>
   )

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
 
 body {
   box-sizing: border-box;
@@ -9,6 +9,6 @@ body {
   background: #161623;
 }
 
-button, input {
+button, input, select, option {
   outline: none;
 }

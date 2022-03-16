@@ -4,20 +4,21 @@
   align-items: center;
 
   width: auto;
-  height: 100px;
+  height: 80px;
   padding: 0 10px;
 
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-op8-white);
   cursor: pointer;
   text-decoration: none;
 }
 .app-summoner:hover {
-  background: rgba(255, 255, 255, 1);
+  background: var(--bg-gradient);
+  box-shadow: 10px 10px 20px black;
 }
 
 .app-summoner > img {
-  width: 80px;
+  width: 60px;
   height: auto;
 
   border-radius: 15px;
@@ -26,7 +27,7 @@
 .app-summoner > h3 {
   margin: 0 20px;
   font-weight: 200;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-family: var(--fml-font);
   color: #000;
@@ -36,7 +37,7 @@
   margin-right: 15px;
   text-align: right;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-family: var(--fml-font);
   color: #000;

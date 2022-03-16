@@ -7,14 +7,16 @@
 
   padding: 20px;
   margin-bottom: 100px;
-  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(26, 228, 255, 0.322);
+  background: var(--bg-nav);
   backdrop-filter: blur(8px);
   z-index: 3000;
 }
 
-.app-nav_logo {
+.app-nav_logo > a{
   color: #fff;
   font-size: 22px;
   font-family: var(--fml-font);
   font-weight: 600;
+  text-decoration: none;
 }

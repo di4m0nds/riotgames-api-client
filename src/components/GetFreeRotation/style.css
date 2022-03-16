@@ -1,0 +1,46 @@
+.app-freerotation_title {
+  font-family: var(--fml-font);
+  color: #fff;
+}
+.app-freerotation_champs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 100px;
+  flex-wrap: wrap;
+}
+
+.app-freerotation_champ {
+  position: relative;
+  margin: 20px;
+  box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.app-freerotation_champ > p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 30px;
+  background: rgba(0,0,0,0.6);
+  font-family: var(--fml-font);
+  font-weight: 600;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .app-freerotation_champs {
+    margin: 0 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .app-freerotation_champs {
+    margin: 0 10px;
+  }
+}

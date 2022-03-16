@@ -4,17 +4,17 @@ import React, { useState } from 'react'
 import { ApiLolContextProvider } from './context/ApiContext'
 
 // Components
-import { Navbar, BgAnimated, HandleRoutes } from './components'
+import { Navbar, Search, HandleRoutes } from './components'
 
 const App = () => {
   const [summoner, setSummoner] = useState('')
 
   return (
     <>
-      <BgAnimated />
       <header>
         <Navbar />
       </header>
+      <Search setSummoner={setSummoner} />
       <ApiLolContextProvider>
         <HandleRoutes summoner={summoner} setSummoner={setSummoner} />
       </ApiLolContextProvider>
