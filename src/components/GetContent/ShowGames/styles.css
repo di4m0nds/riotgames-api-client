@@ -1,0 +1,189 @@
+.app-summonerContent_matches-game {
+  margin: 15px 10px;
+}
+
+.app-summonerContent_matches-game_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  width: 100%;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.app-summonerContent_matches-game_content.win {
+  background: var(--bg-gradient-win);
+}
+.app-summonerContent_matches-game_content.win:hover {
+  background: var(--bg-gradient-winhover);
+}
+
+.app-summonerContent_matches-game_content.defeat {
+  background: var(--bg-gradient-defeat);
+}
+.app-summonerContent_matches-game_content.defeat:hover {
+  background: var(--bg-gradient-defeathover);
+}
+
+.app-summonerContent_matches-game_content.remake {
+  background: linear-gradient(45deg, rgba(20,20,20,0.5), rgba(255, 255, 255, 0));
+}
+.app-summonerContent_matches-game_content.remake:hover {
+  background: linear-gradient(45deg, rgba(20,20,20,0.8), rgba(255, 255, 255, 0));
+}
+
+.game-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app-summonerContent_matches-game_content-team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20px;
+  height: 55px;
+
+  font-family: var(--fml-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  border-radius: 8px;
+  box-shadow: var(--sd-tiny);
+}
+.app-summonerContent_matches-game_content-team.blueteam {
+  background: var(--blueteam-color);
+}
+.app-summonerContent_matches-game_content-team.redteam {
+  background: var(--redteam-color);
+}
+
+.app-summonerContent_matches-game_content > .game-info > p {
+  margin-left: 20px;
+}
+
+.app-summonerContent_matches-game_content > .game-info > .champImg {
+  width:  50px;
+  height: 50px;
+
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: var(--sd-tiny);
+}
+.app-summonerContent_matches-game_content-kda > span {
+  font-weight: 300;
+}
+
+.app-summonerContent_matches-game_content-items {
+  display: flex;
+  width: 80px;
+  flex-wrap: wrap;
+}
+
+.app-summonerContent_matches-game_content-items > img {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.app-summonerContent_matches-game_content-items > .empty-box {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px;
+  background: black;
+  border: 1px solid black;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+
+.app-summonerContent_matches-game_content > .game-info > .imgItem {
+  width: 23px;
+  height: 23px;
+  border: 2px solid black;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.app-summonerContent_matches-game_content-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 80px;
+  margin: 2px 20px;
+}
+
+.app-summonerContent_matches-game_content-stats > p {
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--fml-font);
+  letter-spacing: 2px;
+}
+
+.app-summonerContent_matches-game_content-stats > p:last-child {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.app-summonerContent_matches-game_content-stats > p > span{
+  color: rgb(255, 208, 0);
+  letter-spacing: 2px;
+}
+
+.app-summonerContent_matches-game_content-moment {
+  position: absolute;
+  top: 0;
+  right: 20px;
+
+  font-family: var(--fml-font);
+  font-size: 14px;
+  color: rgb(200, 200, 200);
+}
+
+.app-summonerContent_matches-game_content-gameStats > p {
+  margin: 0 0 0 10px;
+  width: 50px;
+  font-size: 12px;
+  font-family: var(--fml-font);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .app-summonerContent_matches-game_content-stats {
+    margin: 0 5px;
+  }
+  .app-summonerContent_matches-game_content-stats > p {
+    font-size: 12px;
+  }
+  .app-summonerContent_matches-game_content-moment {
+    font-size: 12px;
+  }
+  .app-summonerContent_matches-game_content-gameStats > p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app-summonerContent_matches-game_content-stats {
+    width: 65px;
+  }
+  .app-summonerContent_matches-game_content-moment {
+    top: -10px;
+    right: 10px;
+  }
+}

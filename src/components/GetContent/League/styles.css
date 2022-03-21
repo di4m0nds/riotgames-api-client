@@ -1,0 +1,96 @@
+.app-summonerContent_stats-content_league {
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.app-summonerContent_stats-content_league.bg-league {
+  background: var(--bg-gradient);
+}
+
+.app-summonerContent_stats-content_league-content {
+  position: relative;
+  padding: 15px;
+  margin: 20px;
+
+  border-radius: 5px;
+  background: #161623;
+}
+.app-summonerContent_stats-content_league-content.iron {
+  border: 1px solid rgb(36, 33, 21);
+}
+.app-summonerContent_stats-content_league-content.bronze {
+  border: 1px solid #AD8A56;
+}
+.app-summonerContent_stats-content_league-content.silver {
+  border: 1px solid #D7D7D7;
+}
+.app-summonerContent_stats-content_league-content.gold {
+  border: 1px solid #C9B037;
+}
+.app-summonerContent_stats-content_league-content.platinum {
+  border: 1px solid #37c974;
+}
+.app-summonerContent_stats-content_league-content.diamond {
+  border: 1px solid #4c84ce;
+}
+.app-summonerContent_stats-content_league-content.master {
+  border: 1px solid #9459e0;
+}
+.app-summonerContent_stats-content_league-content.grandmaster {
+  border: 1px solid #c9375c;
+}
+.app-summonerContent_stats-content_league-content.challenger {
+  border: 2px solid #f0cd21;
+}
+
+.app-summonerContent_stats-content_league-content > h4 {
+  margin: 0;
+  font-family: var(--fml-font);
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin-top: 12px;
+
+  text-align: right;
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats > img {
+  width: 105px;
+  height: auto;
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats >  h4 {
+  margin: 0;
+
+  color: rgb(185, 185, 185);
+  font-size: 16px;
+  font-family: var(--fml-font);
+  font-weight: 600;
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats >  span {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  font-size: 18px;
+  font-family: var(--fml-font);
+  font-weight: 600;
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats > div > p {
+  margin: 0;
+
+  color: rgb(185, 185, 185);
+  font-size: 16px;
+  font-family: var(--fml-font);
+}
+
+.app-summonerContent_stats-content_league-content > .league-stats > div > p > span {
+  margin-left: 5px;
+  font-weight: 600;
+}

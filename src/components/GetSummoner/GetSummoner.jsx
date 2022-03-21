@@ -1,42 +1,47 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Grid } from 'react-loader-spinner'
+import { LineWave } from 'react-loader-spinner'
 
-import ApiContext from '../../context/ApiContext'
+// Context
+import SummmonerContext from '../../context/ApiSummonerContext'
 
+// Styles
 import './style.css'
 
 const GetSummoner = ({ summoner }) => {
-  const { summonerData, apiGetSummoner, loader, setLoader } = useContext(ApiContext)
+  const [loading, setLoading] = useState(false)
+  const [sData, setSData] = useState(null)
+  const { apiGetSData } = useContext(SummmonerContext)
 
   useEffect(() => {
     ;(async () => {
       if (summoner) {
-        setLoader(true)
-        await apiGetSummoner(`${summoner.region}&${summoner.name}`)
+        setLoading(true)
+        const result = await apiGetSData({ region: summoner.region, name: summoner.name })
+        setSData(result)
+        setLoading(false)
       }
     })()
   }, [summoner])
 
-  if (loader) return <div className='grid-center height-150'><Grid height="50" width="50" color='white' ariaLabel='loading' /></div>
-  if (summonerData === undefined) return <h1 className='height-150 container-box msg-error'>Summoner name doesn&apos;t exists!</h1>
-  if (summonerData.summoner === undefined) return <div className='height-150'></div>
+  if (loading) return <div className='grid-center height-150'><LineWave height="150" width="150" color='white' ariaLabel='loading' /></div>
+  if (sData?.error) return <h1 className='height-150 container-box msg-error'>Summoner name doesn&apos;t exists!</h1>
 
   return (
     <div className='height-150'>
-      {summonerData &&
+      {sData &&
         <div className='grid-center'>
           <motion.a
-            href={`/${summoner.region}/summoner/${summonerData.summoner.replace(' ', '').toLowerCase()}`} className='app-summoner'
+            href={`/${summoner.region}/summoner/${sData?.name.replace(' ', '').toLowerCase()}`} className='app-summoner'
             whileHover={{ scale: 1.1, rotate: 3 }}
             whileTap={{ scale: 0.9 }}
           >
             <img
-              src={summonerData.icon}
+              src={sData?.profileIcon}
               alt="profileicon"
             />
-            <h3>{summonerData.summoner}</h3>
-            <p>{summonerData.summonerLevel} Level</p>
+            <h3>{sData?.name}</h3>
+            <p>{sData?.summonerLevel} Level</p>
           </motion.a>
         </div>
       }

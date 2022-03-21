@@ -8,7 +8,7 @@ const GetChampAssets = ({ champ, type, version = '12.5.1' }) => {
     passive: (champ) => `http://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${champ}_P.png`
   }
 
-  return <img src={ASSET[type](champ)} />
+  return <img src={ASSET[type](champ)} className='champImg' />
 }
 
 export default GetChampAssets

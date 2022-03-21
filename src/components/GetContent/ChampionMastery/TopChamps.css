@@ -1,0 +1,121 @@
+.topchamps {
+  margin: 0 20px 20px 20px;
+}
+
+.topchamps > h3 {
+  margin: 0;
+  padding: 10px 0;
+
+  font-family: var(--fml-font);
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.listTopChamps {
+  font-family: var(--fml-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.champStats {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 45%;
+  margin: 20px 5px 20px 5px;
+
+  border-radius: 5px;
+  background: #161623;
+}
+.champStats:nth-child(1) {
+  width: 100%;
+  border: 1px solid #C9B037;
+}
+.champStats:nth-child(2) {
+  border: 1px solid #D7D7D7;
+}
+.champStats:nth-child(3) {
+  border: 1px solid #AD8A56;
+}
+
+.champStats > img {
+  position: absolute;
+  top: -30px;
+
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  object-fit: scale-down;
+  object-position: 100% 0;
+
+  border-radius: 50%;
+  background: rgb(71, 71, 71);
+}
+
+.champStats:nth-child(1) > img {
+  background: #C9B037;
+}
+.champStats:nth-child(2) > img {
+  background: #D7D7D7;
+}
+.champStats:nth-child(3) > img {
+  background: #AD8A56;
+}
+
+.champStats > span {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  
+  padding: 2px 5px;
+  
+  font-size: 18px;
+  font-family: var(--fml-font);
+  font-weight: 600;
+}
+.champStats:nth-child(1) > span {
+  color: #C9B037;
+}
+.champStats:nth-child(2) > span {
+  color: #D7D7D7;
+}
+.champStats:nth-child(3) > span {
+  color: #AD8A56;
+}
+
+.champStats > .content {
+  padding: 45px 5px 10px 5px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.champStats > .content > span {
+  font-family: var(--fml-font);
+  font-size: 16px;
+  color: rgb(165, 165, 165);
+}
+
+.champStats > .content > span > span {
+  color: rgb(185, 185, 185);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.champStats > .content > img {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}

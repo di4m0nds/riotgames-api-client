@@ -15,10 +15,13 @@ const HandleRoutes = ({ summoner }) => {
             <GetFreeRotation summoner={summoner} />
           </>
         } />
-        <Route exact path={`/${summonerLocation[1]}/summoner/${summonerLocation[3]}`}
-          element={
-            <SummonerContent summonerRegion={summonerLocation[1]} summonerName={summonerLocation[3]} />
-          }
+        <Route
+          path={`/${summonerLocation[1]}/summoner/${summonerLocation[3]}`}
+          element={<SummonerContent summonerRegion={summonerLocation[1]} summonerName={summonerLocation[3]} />}
+        />
+        <Route
+          path={`/${summonerLocation[1]}/summoner/${summonerLocation[3]}/:id`}
+          element={<SummonerContent summonerRegion={summonerLocation[1]} summonerName={summonerLocation[3]} />}
         />
       </Routes>
     </Router>

@@ -1,5 +1,5 @@
 .app-search {
-  margin-bottom: 50px;
+  margin: 100px 0 20px 0;
 }
 .app-search_form {
   position: relative;
@@ -12,6 +12,7 @@
   background: var(--bg-blur-white);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.411), -10px -10px 20px rgba(0, 0, 0, 0.411);
   border-radius: 10px;
+  border: 2px solid rgb(102, 102, 102);
 }
 
 .app-search_form > input {
