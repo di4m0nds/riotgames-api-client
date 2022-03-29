@@ -11,7 +11,7 @@
   top: 100px;
   left: 0;
   right: 0;
-  z-index: 2001;
+  z-index: 201;
   overflow: hidden;
   padding: 40px 0;
 }
@@ -19,7 +19,7 @@
 .game-content {
   pointer-events: auto;
   position: relative;
-  border-radius: 20px;
+  border-radius: 15px;
   background: #161623;
   overflow: hidden;
   width: 100%;
@@ -31,7 +31,6 @@
   width: 80%;
   height: auto;
   overflow: hidden;
-  pointer-events: none;
 }
 
 .game-open-link {
@@ -70,7 +69,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 35px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1750px) {
+  .content-container {
+    padding: 10px;
+  }
+  .open .game-content {
+    width: 90%;
+  }
+  .game-content-container.open {
+    top: 50px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -83,6 +94,15 @@
   .game:nth-child(4n + 4) {
     flex: 0 0 50%;
     max-width: 50%;
+  }
+  .open .game-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+  .game-content-container.open {
+    top: 80px;
   }
 }
 

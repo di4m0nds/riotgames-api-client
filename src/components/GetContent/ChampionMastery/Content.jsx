@@ -1,4 +1,5 @@
 import React from 'react'
+import GetChampAssets from '../../GetChampAssets/GetChampAssets'
 
 import chest from './Hextech_Crafting_Chest.webp'
 
@@ -8,7 +9,7 @@ const Content = ({ allChamps, champ, champId, i }) => {
 
   return (
     <>
-      <img src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${getChamp[0][1]?.id}.png`} alt="" />
+      <GetChampAssets champ={getChamp[0][0]} type='square' />
       <span>#{i + 1}</span>
       <div className='content'>
         {/* <span>{champ.championId}</span><br /> */}

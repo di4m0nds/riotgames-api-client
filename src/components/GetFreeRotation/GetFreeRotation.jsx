@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 
 import ApiContext from '../../context/ApiContext'
-import { GetChampAssets } from '../'
 
 import './style.css'
 
@@ -25,7 +24,7 @@ const GetFreeRotation = ({ summoner }) => {
             className='app-freerotation_champ'
           >
             <p style={{ color: 'white' }}>{champ[0]}</p>
-            <GetChampAssets champ={champ[1].id} type={'square'} version={champ[1].version} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ[1].id}_0.jpg`} alt="" />
           </div>
         ))}
       </div>

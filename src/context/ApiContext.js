@@ -9,6 +9,7 @@ export function ApiLolContextProvider ({ children }) {
   const [freeChampsRotation, setFreeChampsRotation] = useState({})
   const [matchesData, setMatchesData] = useState([])
   const [championMasteryData, setChampionMasteryData] = useState([])
+  const [perks, setPerks] = useState([])
 
   const apiGetSummoner = async (extUrl) => {
     let result = {}
@@ -83,6 +84,22 @@ export function ApiLolContextProvider ({ children }) {
     setFreeChampsRotation(allFreeChamps)
   }
 
+  const apiGetPerkById = async () => {
+    if (perks.length === 0) {
+      const response = await axios.get('https://ddragon.canisback.com/latest/data/en_US/runesReforged.json')
+      setPerks(response?.data)
+    }
+  }
+
+  const apiGetSummonerById = async (id) => {
+    const response = await axios.get('https://ddragon.canisback.com/latest/data/en_US/summoner.json')
+    let result
+    Object.values(response?.data?.data).forEach(summoner => {
+      if (Number(summoner.key) === Number(id)) result = summoner.id
+    })
+    return result
+  }
+
   const apiClear = async () => {
     await axios.get('http://localhost:6969/srv/clear')
   }
@@ -101,7 +118,10 @@ export function ApiLolContextProvider ({ children }) {
       apiGetChampionMastery,
       championMasteryData,
       getFirstChampMastery,
-      apiClear
+      apiClear,
+      apiGetPerkById,
+      perks,
+      apiGetSummonerById
     }}
    >
       {children}

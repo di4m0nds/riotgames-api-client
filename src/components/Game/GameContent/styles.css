@@ -6,10 +6,23 @@
 
   width: 100%;
 }
+.modal_game-content > header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.modal_game-content > header > p{
+  margin: 0;
+  padding: 0;
 
-.modal_game-content > header > h1 {
   color: white;
   font-family: var(--fml-font);
+  font-weight: 300;
+  font-size: 20px;
+}
+.modal_game-content > header > p > span {
+  font-weight: 600;
 }
 
 .modal_game-content_teams {
@@ -21,4 +34,77 @@
 
   color: white;
   font-family: var(--fml-font);
+}
+
+
+.modal_game-content_teams-blue, 
+.modal_game-content_teams-red {
+  width: 100%;
+}
+
+
+.player-content {
+  flex: 1;
+
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+
+  margin: 3px 5px;
+  padding: 0;
+
+  border-radius: 10px;
+}
+
+.modal_game-content_teams-blue_player {
+  display: flex;
+}
+.modal_game-content_teams-blue_player.win {
+  background: rgba(0, 132, 255, 0.212);
+}
+.modal_game-content_teams-blue_player.defeat {
+  background: rgba(255, 0, 0, 0.185);
+}
+
+.modal_game-content_teams-red_player {
+  display: flex;
+  align-items: center;
+}
+.modal_game-content_teams-red_player.win {
+  background: rgba(0, 132, 255, 0.212);
+}
+.modal_game-content_teams-red_player.defeat {
+  background: rgba(255, 0, 0, 0.185);
+}
+
+.modal_game-content_teams-blue_player > .champ-stats_content > div,
+.modal_game-content_teams-red_player  > .champ-stats_content > div {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1750px) {
+  .player-content {
+    padding: 2px 5px;
+  }
+  .modal_game-content_teams-red_player  > .champ-stats_content > div, .modal_game-content_teams-red_player {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .modal_game-content_teams {
+    flex-direction: column;
+  }
+  .modal_game-content > header {
+    display: none;
+  }
+}
+
+.modal_game-content_teams-blue > div, 
+.modal_game-content_teams-red > div {
+  border: 2px solid transparent;
+}
+
+.modal_game-content_teams-blue > .meStats, 
+.modal_game-content_teams-red > .meStats {
+  border: 2px solid rgb(179, 147, 4);
 }

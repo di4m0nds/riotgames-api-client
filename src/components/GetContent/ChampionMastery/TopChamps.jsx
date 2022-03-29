@@ -5,7 +5,7 @@ import './TopChamps.css'
 
 const TopChamps = ({ allChamps, topChampionMastery }) => {
   const top10 = topChampionMastery
-  top10.length = 9
+  top10.length = 5
 
   return (
     <div className='topchamps'>

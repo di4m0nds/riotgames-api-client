@@ -1,0 +1,148 @@
+.champ-stats_imgLevel {
+  position: relative;
+  margin: 10px 8px;
+  padding: 0;
+  height: 60px;
+}
+
+.champ-stats_imgLevel > p {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+
+  margin: 0;
+  padding: 1px 3px;
+  text-align: center;
+  width: 15px;
+
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--fml-font);
+}
+
+.champ-stats_imgLevel > img {
+  width: 60px;
+  height: 60px;
+
+  margin: 0;
+  padding: 0;
+
+  border-radius: 10px;
+}
+
+.champ-stats_content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.champ-stats_content-up, .champ-stats_content-down {
+  display: flex;
+  justify-content: space-between;
+}
+.champ-stats_content-up {
+  width: 100%;
+}
+
+.champ-stats_content-down {
+  align-items: center;
+  width: 205px;
+  margin: 5px 0 0 0;
+}
+
+.champ-stats_content > div > p {
+  margin: 2px 0;
+  padding: 0;
+}
+
+.champ-stats_content-down_primary > img,
+.champ-stats_content-down_secundary > img {
+  width: 30px;
+  height: 30px;
+  margin: 0 1px;
+}
+.champ-stats_content > a {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: white;
+  font-size: 12px;
+}
+.champ-stats_content > a > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.champ-stats_content > div > .stats {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.champ-stats_content > div > .stats > p {
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  margin: 0 2px;
+  padding: 4px;
+  border-radius: 5px;
+}
+.champ-stats_content > div > .stats > p > span{
+  font-weight: 600;
+}
+
+.champ-stats_content-summoners {
+  width: 23px;
+  padding: 0;
+  margin: 0 5px 0 2px;
+}
+.champ-stats_content-summoners > img {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1150px) {
+  .champ-stats_imgLevel {
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .champ-stats_content-up > .stats > .gold,
+  .champ-stats_content-up > .stats > .visionscore,
+  .champ-stats_content-up > .stats > .kdaAverage {
+    display: none;
+  }
+
+  .champ-stats_content-down {
+    justify-content: flex-start;
+  }
+  .champ-stats_content-down_primary > img,
+  .champ-stats_content-down_secundary > img {
+    width: 18px;
+    height: 18px;
+  }
+  .champ-stats_content-up {
+    width: 95%;
+  }
+  .champ-stats_content > a {
+    bottom: 5px;
+    right: 35px;
+  }
+  .app-summonerContent_matches-game_content-items > .empty-box,
+  .app-summonerContent_matches-game_content-items > .imgItem {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}

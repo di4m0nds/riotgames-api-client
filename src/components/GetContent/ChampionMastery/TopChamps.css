@@ -58,7 +58,7 @@
   object-position: 100% 0;
 
   border-radius: 50%;
-  background: rgb(71, 71, 71);
+  background: #161623;
 }
 
 .champStats:nth-child(1) > img {
@@ -81,6 +81,7 @@
   font-size: 18px;
   font-family: var(--fml-font);
   font-weight: 600;
+  color: rgb(148, 148, 148);
 }
 .champStats:nth-child(1) > span {
   color: #C9B037;
