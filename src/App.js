@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { ApiLolContextProvider } from './context/ApiContext'
 import { ApiSummonerContextProvider } from './context/ApiSummonerContext'
 import { ApiMatchContextProvider } from './context/ApiMatchContext'
+import { ApiYTContextProvider } from './context/ApiYTContext'
 
 // Components
 import { Navbar, Search, HandleRoutes } from './components'
@@ -20,7 +21,9 @@ const App = () => {
       <ApiSummonerContextProvider>
         <ApiLolContextProvider>
           <ApiMatchContextProvider>
-            <HandleRoutes summoner={summoner} />
+            <ApiYTContextProvider>
+              <HandleRoutes summoner={summoner} />
+            </ApiYTContextProvider>
           </ApiMatchContextProvider>
         </ApiLolContextProvider>
       </ApiSummonerContextProvider>

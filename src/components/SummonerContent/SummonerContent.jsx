@@ -10,6 +10,7 @@ import Header from './Header/Header'
 import { AnimatePresence } from 'framer-motion'
 
 import './style.css'
+import StrengthsWeaknesses from './StrengthsWeaknesses/StrengthsWeaknesses'
 
 const SummonerContent = ({ summonerRegion, summonerName }) => {
   const { apiGetExtData } = useContext(ApiSummonerContext)
@@ -40,6 +41,10 @@ const SummonerContent = ({ summonerRegion, summonerName }) => {
           level={extData?.summonerLevel}
           championsMastery={extData?.topChampionMastery}
           region={summonerRegion}
+        />
+        <StrengthsWeaknesses
+          puuid={extData?.puuid}
+          leagueData={extData?.leagueData}
         />
         <GetContent
           region={summonerRegion}

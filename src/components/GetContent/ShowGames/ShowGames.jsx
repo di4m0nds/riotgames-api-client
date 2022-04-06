@@ -26,7 +26,6 @@ const ShowGames = ({ match, puuid }) => {
 
   useEffect(() => {
     (async () => {
-      console.log(dataParticipantGame)
       const res1 = await apiGetSummonerById(dataParticipantGame[0].summoner1Id)
       const res2 = await apiGetSummonerById(dataParticipantGame[0].summoner2Id)
       setSummoners({

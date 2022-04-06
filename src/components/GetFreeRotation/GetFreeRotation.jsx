@@ -1,31 +1,33 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import YouTubeVideo from 'react-youtube'
 
-import ApiContext from '../../context/ApiContext'
+import ApiYTContext from '../../context/ApiYTContext'
 
 import './style.css'
 
 const GetFreeRotation = ({ summoner }) => {
-  const { apiGetFreeRotation, freeChampsRotation } = useContext(ApiContext)
+  const [lives, setLives] = useState(null)
+  const { apiGetYTLives } = useContext(ApiYTContext)
 
   useEffect(() => {
     ;(async () => {
-      if (summoner) await apiGetFreeRotation(summoner.region)
-      else await apiGetFreeRotation('euw1')
+      if (!lives) {
+        const result = await apiGetYTLives({ search: 'GAMING ESPORTS' })
+        setLives(result)
+      }
     })()
-  }, [summoner])
+  }, [])
+
+  if (!lives) return 'Loading ...'
+
+  console.log(lives)
 
   return (
     <div className='app-freerotation'>
-      <h2 className='app-freerotation_title grid-center'>Free Rotation Champs</h2>
+      <h2 className='app-freerotation_title grid-center'>SPORTS GAMES LIVE</h2>
       <div className='app-freerotation_champs' >
-        {Object.entries(freeChampsRotation).map((champ, i) => (
-          <div
-            key={i}
-            className='app-freerotation_champ'
-          >
-            <p style={{ color: 'white' }}>{champ[0]}</p>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ[1].id}_0.jpg`} alt="" />
-          </div>
+        {lives.map((id, i) => (
+          <YouTubeVideo id={i} key={i} videoId={id} className='yt' />
         ))}
       </div>
     </div>
